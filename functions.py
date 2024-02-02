@@ -36,6 +36,7 @@ except ImportError:
 
     print("External Dependency not found Installing It...........")
     subprocess.run(["pip","install","sounddevice"])
+    subprocess.run(["sudo","apt","install","libportaudio2s"])
 
     print("Installed Successfully\n\n\n\n\n")
     
