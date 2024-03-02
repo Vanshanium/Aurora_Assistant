@@ -25,7 +25,10 @@
 
             Install all this manually
             
-            pip install openai playsound sounddevice wave gtts numpy 
+            pip install openai playsound sounddevice wave gtts numpy
+
+
+      ---
 
 
 - In Case You get an error due to portaudio then try this command in linux 
