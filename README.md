@@ -36,5 +36,10 @@
 
     In windows it already installed.
 
+## After all this
+Run the main.py file from the terminal or from your VSCODE
+        
+    python3 ./main.py
+
 
   ---
