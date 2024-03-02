@@ -102,12 +102,11 @@ which is used to get the openai API functions
 
 # OpenAI Documentation - https://platform.openai.com/docs/overview
 
-Open_api_key = "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"
+Open_api_key = "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"
 
 open_client = OpenAI(api_key=Open_api_key)
 
 gpt_model = "gpt-3.5-turbo"
-
 
 
 """
@@ -149,7 +148,7 @@ def voice_command(input_time):
         wave_file.writeframes(recording_chunk)
 
 
-    wave_file.close()
+    wave_file.close()   
     
 
 """
