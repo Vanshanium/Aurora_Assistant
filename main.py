@@ -2,7 +2,6 @@
 
 import functions
 
-
 # This fine tunes the gpt and produce perfect Responces
 
 

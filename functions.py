@@ -10,65 +10,82 @@ cache_path = "./cache"
 if not os.path.exists(cache_path):
     os.makedirs(cache_path)
 
+"""
+This Function Checks for all the dependencies and installs them if they are missing.
+This might be the redundant way to do it but i guess it works pretty well.
+"""
 
-try: 
-    from openai import OpenAI
-except ImportError:
-    print("External Dependency not found Installing It......")
-
-    subprocess.run(["pip","install","openai"])
-    print("Installed Successfully\n\n\n\n\n")
-    from openai import OpenAI
-
-try:
-    from playsound import playsound
-except ImportError:
-    print("External Dependency not found Installing It......")
-
-    subprocess.run(["pip","install","playsound"])
-    print("Installed Successfully\n\n\n\n\n")
-    from playsound import playsound
-
-try:
-    import sounddevice as sound
-
-except ImportError:
-
-    print("External Dependency not found Installing It...........")
-    subprocess.run(["pip","install","sounddevice"])
-    subprocess.run(["sudo","apt","install","libportaudio2s"])
-
-    print("Installed Successfully\n\n\n\n\n")
+def install_depency():
     
-    import sounddevice as sound
+    try: 
+        from openai import OpenAI
+    except ImportError:
+        print("External Dependency not found Installing It......")
 
-try:
-    import wave
-except ImportError:
+        subprocess.run(["pip","install","openai"])
+        print("Installed Successfully\n\n\n\n\n")
+        
 
-    print("External Dependency not found Installing It..........")
-    subprocess.run(["pip","install","wave"])
+    try:
+        from playsound import playsound
+    except ImportError:
+        print("External Dependency not found Installing It......")
 
-    print("Installed Successfully\n\n\n\n\n")
+        subprocess.run(["pip","install","playsound"])
+        print("Installed Successfully\n\n\n\n\n")
 
-    import wave
+    try:
+        import sounddevice as sound
+        subprocess.run(["sudo","apt","install","libportaudio2"])
 
-try:
-    import numpy
-except ImportError:
-    print("External Dependency not found Installing It..........")
-    subprocess.run(["pip","install","numpy  "])
+    except ImportError:
 
-    print("Installed Successfully\n\n\n\n\n")
+        print("External Dependency not found Installing It...........")
+        subprocess.run(["pip","install","sounddevice"])
 
-try: 
-    import gtts
-except ImportError:
-    print("External Dependency not found Installing It......")
+        print("Installed Successfully\n\n\n\n\n")
+        
+    try:
+        import wave
+    except ImportError:
 
-    subprocess.run(["pip","install","gtts"])
-    print("Installed Successfully\n\n\n\n\n")
-    import gtts
+        print("External Dependency not found Installing It..........")
+        subprocess.run(["pip","install","wave"])
+
+        print("Installed Successfully\n\n\n\n\n")
+
+
+    try:
+        import numpy
+    except ImportError:
+        print("External Dependency not found Installing It..........")
+        subprocess.run(["pip","install","numpy  "])
+
+        print("Installed Successfully\n\n\n\n\n")
+
+    try: 
+        import gtts
+    except ImportError:
+        print("External Dependency not found Installing It......")
+
+        subprocess.run(["pip","install","gtts"])
+        print("Installed Successfully\n\n\n\n\n")
+
+
+
+
+
+# They are fall safe. even if the import fails
+# This will import them anyways!
+
+install_depency()
+
+from openai import OpenAI
+from playsound import playsound
+import sounddevice as sound
+import wave
+import gtts
+
 
 
 
@@ -85,7 +102,7 @@ which is used to get the openai API functions
 
 # OpenAI Documentation - https://platform.openai.com/docs/overview
 
-Open_api_key = "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"
+Open_api_key = "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"
 
 open_client = OpenAI(api_key=Open_api_key)
 
