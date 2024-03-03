@@ -102,7 +102,7 @@ which is used to get the openai API functions
 
 # OpenAI Documentation - https://platform.openai.com/docs/overview
 
-Open_api_key = "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"
+Open_api_key = input("Paste Your OpenAi Key!")
 
 open_client = OpenAI(api_key=Open_api_key)
 
